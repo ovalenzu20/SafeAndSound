@@ -9,13 +9,13 @@
 import Foundation
 
 class Report {
-    
-    private var date : Date
-    private var year : Int
-    private var month : Int
-    private var day : Int
-    private var hour : Int
+    private var date   : Date
+    private var year   : Int
+    private var month  : Int
+    private var day    : Int
+    private var hour   : Int
     private var minute : Int
+    
     
     init(date: Date) {
         let userCalendar = Calendar.current
@@ -36,7 +36,5 @@ class Report {
         self.day = dateTimeComponents.day!
         self.hour = dateTimeComponents.hour!
         self.minute = dateTimeComponents.minute!
-
     }
-    
 }
