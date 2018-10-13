@@ -16,13 +16,10 @@ class MenuViewController: UIViewController {
     
     
     fileprivate func setupViews() {
-        logInButton.layer.cornerRadius = logInButton.frame.height / 2
-        logInButton.layer.borderColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
-        logInButton.layer.borderWidth  = 2
+        logInButton.setProperties(bgColor: nil, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: logInButton.frame.height / 2, borderColor: .white, borderWidth: 2)
         
-        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
-        signUpButton.layer.borderColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
-        signUpButton.layer.borderWidth  = 2
+        
+        signUpButton.setProperties(bgColor: nil, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: signUpButton.frame.height / 2, borderColor: .white, borderWidth: 2)
     }
     
     
