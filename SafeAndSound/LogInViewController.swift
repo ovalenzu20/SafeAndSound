@@ -8,12 +8,17 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
 
+class LogInViewController: UIViewController {
+    @IBOutlet weak var emailTextField    : UITextField!
+    @IBOutlet weak var passwordTextField : UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
 
@@ -26,5 +31,4 @@ class LogInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

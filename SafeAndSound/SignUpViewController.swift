@@ -11,16 +11,12 @@ import Firebase
 
 
 class SignUpViewController: UIViewController {
-    @IBOutlet weak var firstNameTextField : UITextField!
-    @IBOutlet weak var lastNameTextField  : UITextField!
     @IBOutlet weak var emailTextField     : UITextField!
     @IBOutlet weak var passwordTextField  : UITextField!
     @IBOutlet weak var signUpButton       : UIButton!
     
     
     @IBAction func signUp(_ sender: UIButton) {
-        guard let firstName = firstNameTextField.text else { return }
-        guard let lastName  = lastNameTextField.text  else { return }
         guard let email     = emailTextField.text     else { return }
         guard let password  = passwordTextField.text  else { return }
         
