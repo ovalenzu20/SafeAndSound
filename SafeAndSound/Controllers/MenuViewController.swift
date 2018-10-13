@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  MenuViewController.swift
 //  SafeAndSound
 //
 //  Created by Teran on 10/13/18.
@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
-class SignInViewController: UIViewController {
+
+class MenuViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -30,7 +32,11 @@ class SignInViewController: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "toMainScreen", sender: self)
+        }
     }
 }

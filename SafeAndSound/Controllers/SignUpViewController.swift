@@ -11,25 +11,28 @@ import Firebase
 
 
 class SignUpViewController: UIViewController {
-    @IBOutlet weak var firstNameTextField : UITextField!
-    @IBOutlet weak var lastNameTextField  : UITextField!
     @IBOutlet weak var emailTextField     : UITextField!
     @IBOutlet weak var passwordTextField  : UITextField!
     @IBOutlet weak var signUpButton       : UIButton!
     
     
+    @IBAction func dismissView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func signUp(_ sender: UIButton) {
-        guard let firstName = firstNameTextField.text else { return }
-        guard let lastName  = lastNameTextField.text  else { return }
         guard let email     = emailTextField.text     else { return }
         guard let password  = passwordTextField.text  else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { user, error in
             if error == nil && user != nil {
+                // SUCCESSFUL LOGIN
                 print("User Created")
+                self.dismiss(animated: false, completion: nil)
             }
             else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(error?.localizedDescription ?? "")")
             }
         }
     }
