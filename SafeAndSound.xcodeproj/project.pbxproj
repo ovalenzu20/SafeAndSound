@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04A4BA14D398879CB0C5EAEB /* Pods_SafeAndSound_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BFBB83B247036E3B220E2 /* Pods_SafeAndSound_WatchKit_App.framework */; };
 		0713189C2171F641007CD387 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189B2171F641007CD387 /* SignInViewController.swift */; };
+		784DBAD721723BB100EA568C /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBAD621723BB100EA568C /* Report.swift */; };
+		784DBAD921723BBA00EA568C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBAD821723BBA00EA568C /* User.swift */; };
 		78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DB02171E7D3002523F5 /* AppDelegate.swift */; };
 		78904DB62171E7D3002523F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB42171E7D3002523F5 /* Main.storyboard */; };
 		78904DB82171E7D3002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB72171E7D3002523F5 /* Assets.xcassets */; };
@@ -76,6 +78,8 @@
 		1BA9A8AA4D4F787CC255B6B4 /* Pods-SafeAndSound WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit App/Pods-SafeAndSound WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		63B7A5E4E9A3860D734E7E0D /* Pods_SafeAndSound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732BFBB83B247036E3B220E2 /* Pods_SafeAndSound_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		784DBAD621723BB100EA568C /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		784DBAD821723BBA00EA568C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		78904DAD2171E7D3002523F5 /* SafeAndSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAndSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DB02171E7D3002523F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78904DB52171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				78904DEF217201F9002523F5 /* SodaClient.swift */,
+				784DBAD621723BB100EA568C /* Report.swift */,
+				784DBAD821723BBA00EA568C /* User.swift */,
 			);
 			name = Models;
 			path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models;
@@ -488,6 +494,8 @@
 				78904DF0217201F9002523F5 /* SodaClient.swift in Sources */,
 				78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */,
 				0713189C2171F641007CD387 /* SignInViewController.swift in Sources */,
+				784DBAD921723BBA00EA568C /* User.swift in Sources */,
+				784DBAD721723BB100EA568C /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
