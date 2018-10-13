@@ -242,6 +242,21 @@
             </objects>
             <point key="canvasLocation" x="2036" y="135"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="h4M-G7-0fh">
+            <objects>
+                <viewController id="7b8-jT-fcX" customClass="MapViewController" customModule="SafeAndSound" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a3R-xT-jE0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mBx-W3-TCj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIy-nZ-Mgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="153"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="I8G-cf-mO5">
             <objects>
