@@ -66,7 +66,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         marker.position = newPosition
         marker.title = cautiousTitle
         marker.snippet = cautiousSnippet
-        let image = UIImage(named: "AlertPin-10")
+        let image = UIImage(named: "WarningPin-13")
         marker.icon = resizeImage(image: image!, newWidth: 40)
         marker.map = mapView
     }
@@ -77,7 +77,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         marker.position = newPosition
         marker.title = policeDepartment
         marker.snippet = hoursOfOperation
-        let image = UIImage(named: "AlertPin-10")
+        let image = UIImage(named: "PolicePin-11")
         marker.icon = resizeImage(image: image!, newWidth: 25)
         marker.map = mapView
     }
@@ -88,7 +88,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         marker.position = newPosition
         marker.title = safeSpot
         marker.snippet = description
-        let image = UIImage(named: "AlertPin-10")
+        let image = UIImage(named: "SafePin-12")
         marker.icon = resizeImage(image: image!, newWidth: 25)
         marker.map = mapView
     }
