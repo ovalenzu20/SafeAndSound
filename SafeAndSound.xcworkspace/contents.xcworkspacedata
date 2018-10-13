@@ -2,13 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/NearbyCrimeNotificationViewController.swift">
-   </FileRef>
-   <Group
-      location = "group:/Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models"
-      name = "Models">
-   </Group>
-   <FileRef
       location = "group:SafeAndSound.xcodeproj">
    </FileRef>
    <FileRef

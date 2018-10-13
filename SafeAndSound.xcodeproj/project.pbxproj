@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04A4BA14D398879CB0C5EAEB /* Pods_SafeAndSound_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BFBB83B247036E3B220E2 /* Pods_SafeAndSound_WatchKit_App.framework */; };
-		0713189C2171F641007CD387 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189B2171F641007CD387 /* SignInViewController.swift */; };
+		0713189C2171F641007CD387 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189B2171F641007CD387 /* MenuViewController.swift */; };
 		0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189D2171FBDB007CD387 /* LogInViewController.swift */; };
 		071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189F2171FBF1007CD387 /* SignUpViewController.swift */; };
 		071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071318A12171FF80007CD387 /* UIView+Extensions.swift */; };
@@ -79,7 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0713189B2171F641007CD387 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controllers/SignInViewController.swift; sourceTree = "<group>"; };
+		0713189B2171F641007CD387 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0713189D2171FBDB007CD387 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0713189F2171FBF1007CD387 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		071318A12171FF80007CD387 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -91,9 +91,9 @@
 		784DBAD621723BB100EA568C /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		784DBAD821723BBA00EA568C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		784DBADA2172437E00EA568C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
-		784DBADC217243F600EA568C /* AddSuspiciousReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddSuspiciousReportViewController.swift; path = Controllers/AddSuspiciousReportViewController.swift; sourceTree = "<group>"; };
-		784DBADE217244A700EA568C /* NearbyCrimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearbyCrimeListViewController.swift; path = Controllers/NearbyCrimeListViewController.swift; sourceTree = "<group>"; };
-		784DBAE2217245D800EA568C /* NearbyCrimeNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearbyCrimeNotificationViewController.swift; path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/NearbyCrimeNotificationViewController.swift; sourceTree = "<absolute>"; };
+		784DBADC217243F600EA568C /* AddSuspiciousReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuspiciousReportViewController.swift; sourceTree = "<group>"; };
+		784DBADE217244A700EA568C /* NearbyCrimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCrimeListViewController.swift; sourceTree = "<group>"; };
+		784DBAE2217245D800EA568C /* NearbyCrimeNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearbyCrimeNotificationViewController.swift; path = /Developer/SafeAndSound/SafeAndSound/Controllers/NearbyCrimeNotificationViewController.swift; sourceTree = "<absolute>"; };
 		78904DAD2171E7D3002523F5 /* SafeAndSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAndSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DB02171E7D3002523F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78904DB52171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		78904DDB2171E7D4002523F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78904DDC2171E7D4002523F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		78904DEF217201F9002523F5 /* SodaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SodaClient.swift; path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/SodaClient.swift; sourceTree = "<absolute>"; };
+		78904DEF217201F9002523F5 /* SodaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SodaClient.swift; path = /Developer/SafeAndSound/SafeAndSound/Models/SodaClient.swift; sourceTree = "<absolute>"; };
 		BFD778D64671AE867258D19E /* Pods-SafeAndSound WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6899C6CCAC64F5F22CAC63 /* Pods-SafeAndSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.release.xcconfig"; sourceTree = "<group>"; };
 		E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +178,7 @@
 				784DBAD821723BBA00EA568C /* User.swift */,
 			);
 			name = Models;
-			path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models;
+			path = /Developer/SafeAndSound/SafeAndSound/Models;
 			sourceTree = "<absolute>";
 		};
 		78904DA42171E7D3002523F5 = {
@@ -207,20 +207,13 @@
 			isa = PBXGroup;
 			children = (
 				78904DB42171E7D3002523F5 /* Main.storyboard */,
-				784DBADE217244A700EA568C /* NearbyCrimeListViewController.swift */,
-				784DBAE2217245D800EA568C /* NearbyCrimeNotificationViewController.swift */,
-				784DBADC217243F600EA568C /* AddSuspiciousReportViewController.swift */,
 				784DBADA2172437E00EA568C /* MapViewController.swift */,
 				78904DB92171E7D3002523F5 /* LaunchScreen.storyboard */,
 				78904DBC2171E7D3002523F5 /* Info.plist */,
 				78904DF4217203D3002523F5 /* Supporting Resources */,
 				784DBAD521723B7900EA568C /* Models */,
-				78904DF2217203B7002523F5 /* Views */,
 				78904DF3217203BD002523F5 /* Controllers */,
 				78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */,
-				0713189B2171F641007CD387 /* SignInViewController.swift */,
-				0713189D2171FBDB007CD387 /* LogInViewController.swift */,
-				0713189F2171FBF1007CD387 /* SignUpViewController.swift */,
 				071318A12171FF80007CD387 /* UIView+Extensions.swift */,
 			);
 			path = SafeAndSound;
@@ -249,16 +242,15 @@
 			path = "SafeAndSound WatchKit Extension";
 			sourceTree = "<group>";
 		};
-		78904DF2217203B7002523F5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		78904DF3217203BD002523F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0713189D2171FBDB007CD387 /* LogInViewController.swift */,
+				0713189F2171FBF1007CD387 /* SignUpViewController.swift */,
+				784DBAE2217245D800EA568C /* NearbyCrimeNotificationViewController.swift */,
+				784DBADE217244A700EA568C /* NearbyCrimeListViewController.swift */,
+				0713189B2171F641007CD387 /* MenuViewController.swift */,
+				784DBADC217243F600EA568C /* AddSuspiciousReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -515,7 +507,7 @@
 				78904DF0217201F9002523F5 /* SodaClient.swift in Sources */,
 				784DBADF217244A700EA568C /* NearbyCrimeListViewController.swift in Sources */,
 				78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */,
-				0713189C2171F641007CD387 /* SignInViewController.swift in Sources */,
+				0713189C2171F641007CD387 /* MenuViewController.swift in Sources */,
 				784DBAD921723BBA00EA568C /* User.swift in Sources */,
 				784DBADB2172437E00EA568C /* MapViewController.swift in Sources */,
 				784DBAD721723BB100EA568C /* Report.swift in Sources */,
