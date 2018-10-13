@@ -16,6 +16,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton       : UIButton!
     
     
+    @IBAction func dismissView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func signUp(_ sender: UIButton) {
         guard let email     = emailTextField.text     else { return }
         guard let password  = passwordTextField.text  else { return }
@@ -27,7 +32,7 @@ class SignUpViewController: UIViewController {
                 self.dismiss(animated: false, completion: nil)
             }
             else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(error?.localizedDescription ?? "")")
             }
         }
     }

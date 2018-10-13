@@ -12,11 +12,11 @@ import Firebase
 class LogInViewController: UIViewController {
     @IBOutlet weak var emailTextField    : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
+    @IBOutlet weak var logInButton       : UIButton!
     
-    @IBOutlet weak var logInButton: UIButton!
     
     @IBAction func dismissLogIn(_ sender: UIButton) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -31,7 +31,7 @@ class LogInViewController: UIViewController {
                 self.dismiss(animated: false, completion: nil)
             }
             else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(error?.localizedDescription ?? "")")
             }
         }
     }
@@ -50,15 +50,4 @@ class LogInViewController: UIViewController {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
