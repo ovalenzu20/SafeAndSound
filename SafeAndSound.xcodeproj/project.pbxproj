@@ -148,6 +148,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		071318A62172620C007CD387 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0713189B2171F641007CD387 /* MenuViewController.swift */,
+				0713189D2171FBDB007CD387 /* LogInViewController.swift */,
+				0713189F2171FBF1007CD387 /* SignUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		071318A72172621A007CD387 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7090970BD41226E4E0E72EE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,15 +200,14 @@
 		78904DAF2171E7D3002523F5 /* SafeAndSound */ = {
 			isa = PBXGroup;
 			children = (
+				071318A72172621A007CD387 /* Model */,
+				071318A62172620C007CD387 /* Controllers */,
 				78904DB02171E7D3002523F5 /* AppDelegate.swift */,
 				78904DB42171E7D3002523F5 /* Main.storyboard */,
 				78904DB72171E7D3002523F5 /* Assets.xcassets */,
 				78904DB92171E7D3002523F5 /* LaunchScreen.storyboard */,
 				78904DBC2171E7D3002523F5 /* Info.plist */,
 				78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */,
-				0713189B2171F641007CD387 /* MenuViewController.swift */,
-				0713189D2171FBDB007CD387 /* LogInViewController.swift */,
-				0713189F2171FBF1007CD387 /* SignUpViewController.swift */,
 				071318A12171FF80007CD387 /* UIView+Extensions.swift */,
 				071318A42172503B007CD387 /* TestLogInViewController.swift */,
 			);
