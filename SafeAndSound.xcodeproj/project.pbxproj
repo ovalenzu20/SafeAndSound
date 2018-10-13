@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04A4BA14D398879CB0C5EAEB /* Pods_SafeAndSound_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BFBB83B247036E3B220E2 /* Pods_SafeAndSound_WatchKit_App.framework */; };
+		0713189C2171F641007CD387 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189B2171F641007CD387 /* SignInViewController.swift */; };
 		78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DB02171E7D3002523F5 /* AppDelegate.swift */; };
-		78904DB32171E7D3002523F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DB22171E7D3002523F5 /* ViewController.swift */; };
 		78904DB62171E7D3002523F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB42171E7D3002523F5 /* Main.storyboard */; };
 		78904DB82171E7D3002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB72171E7D3002523F5 /* Assets.xcassets */; };
 		78904DBB2171E7D3002523F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB92171E7D3002523F5 /* LaunchScreen.storyboard */; };
@@ -69,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0713189B2171F641007CD387 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0A53EC8C3E2102AB9F281545 /* Pods-SafeAndSound WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		11445F5B0BC45BB9C5DF9537 /* Pods-SafeAndSound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.debug.xcconfig"; sourceTree = "<group>"; };
 		1BA9A8AA4D4F787CC255B6B4 /* Pods-SafeAndSound WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit App/Pods-SafeAndSound WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		732BFBB83B247036E3B220E2 /* Pods_SafeAndSound_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DAD2171E7D3002523F5 /* SafeAndSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAndSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DB02171E7D3002523F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78904DB22171E7D3002523F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78904DB52171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78904DB72171E7D3002523F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78904DBA2171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		78904DD92171E7D4002523F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78904DDB2171E7D4002523F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78904DDC2171E7D4002523F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFD778D64671AE867258D19E /* Pods-SafeAndSound WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6899C6CCAC64F5F22CAC63 /* Pods-SafeAndSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.release.xcconfig"; sourceTree = "<group>"; };
 		E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,12 +176,12 @@
 			isa = PBXGroup;
 			children = (
 				78904DB02171E7D3002523F5 /* AppDelegate.swift */,
-				78904DB22171E7D3002523F5 /* ViewController.swift */,
 				78904DB42171E7D3002523F5 /* Main.storyboard */,
 				78904DB72171E7D3002523F5 /* Assets.xcassets */,
 				78904DB92171E7D3002523F5 /* LaunchScreen.storyboard */,
 				78904DBC2171E7D3002523F5 /* Info.plist */,
 				78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */,
+				0713189B2171F641007CD387 /* SignInViewController.swift */,
 			);
 			path = SafeAndSound;
 			sourceTree = "<group>";
@@ -449,8 +449,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78904DB32171E7D3002523F5 /* ViewController.swift in Sources */,
 				78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */,
+				0713189C2171F641007CD387 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
