@@ -9,17 +9,20 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     
-    
-    @IBAction func logIn(_ sender: UIButton) {
+    fileprivate func setupSubviews() {
+        logInButton.layer.cornerRadius = 4
+        logInButton.layer.borderColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
+        logInButton.layer.borderWidth  = 2
         
+        signUpButton.layer.cornerRadius = 4
+        signUpButton.layer.borderColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
+        signUpButton.layer.borderWidth  = 2
     }
     
-    
-    @IBAction func signUp(_ sender: UIButton) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
