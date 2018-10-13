@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/SodaClient.swift">
-   </FileRef>
-   <FileRef
       location = "group:SafeAndSound.xcodeproj">
    </FileRef>
    <FileRef
