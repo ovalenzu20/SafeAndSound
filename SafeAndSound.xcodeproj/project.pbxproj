@@ -12,6 +12,7 @@
 		0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189D2171FBDB007CD387 /* LogInViewController.swift */; };
 		071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189F2171FBF1007CD387 /* SignUpViewController.swift */; };
 		071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071318A12171FF80007CD387 /* UIView+Extensions.swift */; };
+		071318A52172503B007CD387 /* TestLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071318A42172503B007CD387 /* TestLogInViewController.swift */; };
 		78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DB02171E7D3002523F5 /* AppDelegate.swift */; };
 		78904DB62171E7D3002523F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB42171E7D3002523F5 /* Main.storyboard */; };
 		78904DB82171E7D3002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB72171E7D3002523F5 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		0713189D2171FBDB007CD387 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0713189F2171FBF1007CD387 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		071318A12171FF80007CD387 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		071318A42172503B007CD387 /* TestLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLogInViewController.swift; sourceTree = "<group>"; };
 		0A53EC8C3E2102AB9F281545 /* Pods-SafeAndSound WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		11445F5B0BC45BB9C5DF9537 /* Pods-SafeAndSound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.debug.xcconfig"; sourceTree = "<group>"; };
 		1BA9A8AA4D4F787CC255B6B4 /* Pods-SafeAndSound WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit App/Pods-SafeAndSound WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				0713189D2171FBDB007CD387 /* LogInViewController.swift */,
 				0713189F2171FBF1007CD387 /* SignUpViewController.swift */,
 				071318A12171FF80007CD387 /* UIView+Extensions.swift */,
+				071318A42172503B007CD387 /* TestLogInViewController.swift */,
 			);
 			path = SafeAndSound;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				0713189C2171F641007CD387 /* MenuViewController.swift in Sources */,
 				071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */,
 				071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */,
+				071318A52172503B007CD387 /* TestLogInViewController.swift in Sources */,
 				0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

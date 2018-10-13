@@ -22,7 +22,9 @@ class SignUpViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { user, error in
             if error == nil && user != nil {
+                // SUCCESSFUL LOGIN
                 print("User Created")
+                self.dismiss(animated: false, completion: nil)
             }
             else {
                 print("Error: \(error?.localizedDescription)")

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class MenuViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
@@ -27,6 +29,15 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let user = Auth.auth().currentUser {
+            self.performSegue(withIdentifier: "toMainScreen", sender: self)
+        }
     }
     
     
