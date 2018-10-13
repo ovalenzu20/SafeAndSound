@@ -2,8 +2,8 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "container:"
-      name = "Model">
+      location = "group:/Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models"
+      name = "Models">
    </Group>
    <FileRef
       location = "group:SafeAndSound.xcodeproj">
