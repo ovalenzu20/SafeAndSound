@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var firstNameTextField : UITextField!
@@ -17,7 +19,19 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func signUp(_ sender: UIButton) {
+        guard let firstName = firstNameTextField.text else { return }
+        guard let lastName  = lastNameTextField.text  else { return }
+        guard let email     = emailTextField.text     else { return }
+        guard let password  = passwordTextField.text  else { return }
         
+        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+            if error == nil && user != nil {
+                print("User Created")
+            }
+            else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
     }
     
     
@@ -29,6 +43,9 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
 
