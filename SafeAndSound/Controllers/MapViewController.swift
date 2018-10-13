@@ -11,17 +11,34 @@ import CoreLocation
 import GoogleMaps
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
-    
     let locationMgr = CLLocationManager()
     var lattitude : CLLocationDegrees = 0
     var longitude : CLLocationDegrees = 0
     var currentLocation : CLLocation!
     
-    @IBOutlet fileprivate weak var mapView: GMSMapView!
+    
+    @IBOutlet fileprivate weak var mapView   : GMSMapView!
+    @IBOutlet weak var reportContainerView   : UIView!
+    @IBOutlet weak var reportImageView: UIImageView!
+    @IBOutlet weak var recentReportsContainerView: UIView!
+    
+    
+    fileprivate func setupViews() {
+        reportContainerView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, height: (view.frame.height / 4) * 3)
+        
+        reportImageView.anchor(top: reportContainerView.topAnchor, leading: reportContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 22, left: 16), width: (reportContainerView.frame.width / 2) - 16, height: (reportContainerView.frame.width / 2) - 16)
+        
+        reportImageView.setProperties(bgColor: nil, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: 2, borderColor: .white, borderWidth: 4)
+    
+        recentReportsContainerView.anchor(top: reportImageView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 16, left: 16), height: 30)
+        
+        recentReportsContainerView.setProperties(bgColor: .white, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: 2, borderColor: nil, borderWidth: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupViews()
         getLocation()
         let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 10)
         mapView.camera = camera
@@ -34,8 +51,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         drawCircle(lat: newPosition.latitude, long: newPosition.longitude, opacity: 0.15, radius: 1000)
         mapView.settings.myLocationButton = true
-        
     }
+    
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         let scale = newWidth / image.size.width
@@ -49,26 +66,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         return newImage
     }
     
+    
     func showEmergencyMarker(position: CLLocationCoordinate2D, emergencyTitle: String, emergencySnippet: String){
-        let marker = GMSMarker()
+        let marker      = GMSMarker()
         let newPosition = CLLocationCoordinate2D(latitude: position.latitude - 0.001, longitude: position.longitude )
         marker.position = newPosition
-        marker.title = emergencyTitle
-        marker.snippet = emergencySnippet
-        let image = UIImage(named: "AlertPin-10")
-        marker.icon = resizeImage(image: image!, newWidth: 40)
-        marker.map = mapView
+        marker.title    = emergencyTitle
+        marker.snippet  = emergencySnippet
+        let image       = UIImage(named: "AlertPin-10")
+        marker.icon     = resizeImage(image: image!, newWidth: 40)
+        marker.map      = mapView
     }
     
+    
     func showCautiousMarker(position: CLLocationCoordinate2D, cautiousTitle: String, cautiousSnippet: String){
-        let marker = GMSMarker()
+        let marker      = GMSMarker()
         let newPosition = CLLocationCoordinate2D(latitude: position.latitude - 0.001, longitude: position.longitude )
         marker.position = newPosition
-        marker.title = cautiousTitle
-        marker.snippet = cautiousSnippet
-        let image = UIImage(named: "WarningPin-13")
-        marker.icon = resizeImage(image: image!, newWidth: 40)
-        marker.map = mapView
+        marker.title    = cautiousTitle
+        marker.snippet  = cautiousSnippet
+        let image       = UIImage(named: "WarningPin-13")
+        marker.icon     = resizeImage(image: image!, newWidth: 40)
+        marker.map      = mapView
     }
     
     func showPoliceMarker(position: CLLocationCoordinate2D, policeDepartment: String, hoursOfOperation: String){
@@ -178,4 +197,18 @@ extension MapViewController: GMSMapViewDelegate{
         
         return view
     }
+}
+
+
+extension MapViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath)
+        return cell
+    }
+    
+    
 }
