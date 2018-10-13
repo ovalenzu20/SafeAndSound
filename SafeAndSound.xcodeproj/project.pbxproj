@@ -21,6 +21,7 @@
 		78904DD62171E7D4002523F5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DD52171E7D4002523F5 /* ExtensionDelegate.swift */; };
 		78904DD82171E7D4002523F5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DD72171E7D4002523F5 /* NotificationController.swift */; };
 		78904DDA2171E7D4002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DD92171E7D4002523F5 /* Assets.xcassets */; };
+		78904DEB2171F3FD002523F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */; };
 		CABEE88FD75FBB3DFA907CCA /* Pods_SafeAndSound_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */; };
 		D899B57418F13F491BC06D4E /* Pods_SafeAndSound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B7A5E4E9A3860D734E7E0D /* Pods_SafeAndSound.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		78904DD92171E7D4002523F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78904DDB2171E7D4002523F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78904DDC2171E7D4002523F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFD778D64671AE867258D19E /* Pods-SafeAndSound WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6899C6CCAC64F5F22CAC63 /* Pods-SafeAndSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.release.xcconfig"; sourceTree = "<group>"; };
 		E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 				78904DB72171E7D3002523F5 /* Assets.xcassets */,
 				78904DB92171E7D3002523F5 /* LaunchScreen.storyboard */,
 				78904DBC2171E7D3002523F5 /* Info.plist */,
+				78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */,
 			);
 			path = SafeAndSound;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				78904DAB2171E7D3002523F5 /* Resources */,
 				78904DE62171E7D4002523F5 /* Embed Watch Content */,
 				94F46AED0B4F75BAA9EB5324 /* [CP] Copy Pods Resources */,
+				B59EFB5620947F1454B99E82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78904DBB2171E7D3002523F5 /* LaunchScreen.storyboard in Resources */,
+				78904DEB2171F3FD002523F5 /* GoogleService-Info.plist in Resources */,
 				78904DB82171E7D3002523F5 /* Assets.xcassets in Resources */,
 				78904DB62171E7D3002523F5 /* Main.storyboard in Resources */,
 			);
@@ -393,6 +398,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B59EFB5620947F1454B99E82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDB2FAC8D1B245B7FD8AFCB3 /* [CP] Check Pods Manifest.lock */ = {

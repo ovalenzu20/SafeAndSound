@@ -8,6 +8,9 @@ target 'SafeAndSound' do
   # Pods for SafeAndSound
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end
 
