@@ -15,6 +15,10 @@
 		784DBAD721723BB100EA568C /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBAD621723BB100EA568C /* Report.swift */; };
 		784DBAD921723BBA00EA568C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBAD821723BBA00EA568C /* User.swift */; };
 		784DBADB2172437E00EA568C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBADA2172437E00EA568C /* MapViewController.swift */; };
+		785FCE8C2172BC210033C119 /* SafeSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE8B2172BC210033C119 /* SafeSpot.swift */; };
+		785FCE8E2172BC2E0033C119 /* PoliceStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE8D2172BC2E0033C119 /* PoliceStation.swift */; };
+		785FCE902172BC420033C119 /* EmergencyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE8F2172BC420033C119 /* EmergencyEvent.swift */; };
+		785FCE922172BC680033C119 /* CautionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE912172BC680033C119 /* CautionEvent.swift */; };
 		78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DB02171E7D3002523F5 /* AppDelegate.swift */; };
 		78904DB62171E7D3002523F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB42171E7D3002523F5 /* Main.storyboard */; };
 		78904DB82171E7D3002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB72171E7D3002523F5 /* Assets.xcassets */; };
@@ -88,6 +92,10 @@
 		784DBAD621723BB100EA568C /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		784DBAD821723BBA00EA568C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		784DBADA2172437E00EA568C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		785FCE8B2172BC210033C119 /* SafeSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSpot.swift; sourceTree = "<group>"; };
+		785FCE8D2172BC2E0033C119 /* PoliceStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceStation.swift; sourceTree = "<group>"; };
+		785FCE8F2172BC420033C119 /* EmergencyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyEvent.swift; sourceTree = "<group>"; };
+		785FCE912172BC680033C119 /* CautionEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CautionEvent.swift; sourceTree = "<group>"; };
 		78904DAD2171E7D3002523F5 /* SafeAndSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAndSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DB02171E7D3002523F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78904DB52171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,6 +186,10 @@
 				78904DEF217201F9002523F5 /* SodaClient.swift */,
 				784DBAD621723BB100EA568C /* Report.swift */,
 				784DBAD821723BBA00EA568C /* User.swift */,
+				785FCE8B2172BC210033C119 /* SafeSpot.swift */,
+				785FCE8D2172BC2E0033C119 /* PoliceStation.swift */,
+				785FCE8F2172BC420033C119 /* EmergencyEvent.swift */,
+				785FCE912172BC680033C119 /* CautionEvent.swift */,
 			);
 			name = Models;
 			path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models;
@@ -505,12 +517,16 @@
 			files = (
 				78904DF0217201F9002523F5 /* SodaClient.swift in Sources */,
 				78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */,
+				785FCE922172BC680033C119 /* CautionEvent.swift in Sources */,
 				0713189C2171F641007CD387 /* MenuViewController.swift in Sources */,
 				784DBAD921723BBA00EA568C /* User.swift in Sources */,
+				785FCE902172BC420033C119 /* EmergencyEvent.swift in Sources */,
 				784DBADB2172437E00EA568C /* MapViewController.swift in Sources */,
 				784DBAD721723BB100EA568C /* Report.swift in Sources */,
 				071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */,
+				785FCE8E2172BC2E0033C119 /* PoliceStation.swift in Sources */,
 				071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */,
+				785FCE8C2172BC210033C119 /* SafeSpot.swift in Sources */,
 				0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
