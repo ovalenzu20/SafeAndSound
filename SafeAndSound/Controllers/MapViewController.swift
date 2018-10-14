@@ -107,14 +107,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    @IBOutlet fileprivate weak var mapView   : GMSMapView!
-    @IBOutlet weak var reportContainerView   : UIView!
-    @IBOutlet weak var reportImageView: UIImageView!
-    @IBOutlet weak var recentReportsContainerView: UIView!
-    
-    
-    
-    
     fileprivate func setupViews() {
         reportContainerView.anchor(top: view.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, height: (view.frame.height / 4) * 3)
         
@@ -153,6 +145,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCriminalLocations()
         
         viewDownOffset = 500
         viewUp = reportContainerView.center
