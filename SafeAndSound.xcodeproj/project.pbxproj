@@ -17,6 +17,8 @@
 		784DBADB2172437E00EA568C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBADA2172437E00EA568C /* MapViewController.swift */; };
 		785FCE8C2172BC210033C119 /* SafeSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE8B2172BC210033C119 /* SafeSpot.swift */; };
 		785FCE8E2172BC2E0033C119 /* PoliceStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE8D2172BC2E0033C119 /* PoliceStation.swift */; };
+		785FCE952172F7990033C119 /* CrimeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE942172F7990033C119 /* CrimeReport.swift */; };
+		785FCE97217303AA0033C119 /* CrimeReportAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FCE96217303AA0033C119 /* CrimeReportAPIManager.swift */; };
 		78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DB02171E7D3002523F5 /* AppDelegate.swift */; };
 		78904DB62171E7D3002523F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB42171E7D3002523F5 /* Main.storyboard */; };
 		78904DB82171E7D3002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DB72171E7D3002523F5 /* Assets.xcassets */; };
@@ -30,7 +32,6 @@
 		78904DD82171E7D4002523F5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DD72171E7D4002523F5 /* NotificationController.swift */; };
 		78904DDA2171E7D4002523F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78904DD92171E7D4002523F5 /* Assets.xcassets */; };
 		78904DEB2171F3FD002523F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */; };
-		78904DF0217201F9002523F5 /* SodaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78904DEF217201F9002523F5 /* SodaClient.swift */; };
 		CABEE88FD75FBB3DFA907CCA /* Pods_SafeAndSound_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */; };
 		D899B57418F13F491BC06D4E /* Pods_SafeAndSound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B7A5E4E9A3860D734E7E0D /* Pods_SafeAndSound.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,8 @@
 		785FCE8B2172BC210033C119 /* SafeSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSpot.swift; sourceTree = "<group>"; };
 		785FCE8D2172BC2E0033C119 /* PoliceStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceStation.swift; sourceTree = "<group>"; };
 		785FCE932172C9990033C119 /* SafeAndSound.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeAndSound.entitlements; sourceTree = "<group>"; };
+		785FCE942172F7990033C119 /* CrimeReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeReport.swift; sourceTree = "<group>"; };
+		785FCE96217303AA0033C119 /* CrimeReportAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeReportAPIManager.swift; sourceTree = "<group>"; };
 		78904DAD2171E7D3002523F5 /* SafeAndSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAndSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DB02171E7D3002523F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78904DB52171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 		78904DDB2171E7D4002523F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78904DDC2171E7D4002523F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		78904DEF217201F9002523F5 /* SodaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SodaClient.swift; path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models/SodaClient.swift; sourceTree = "<absolute>"; };
 		BFD778D64671AE867258D19E /* Pods-SafeAndSound WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6899C6CCAC64F5F22CAC63 /* Pods-SafeAndSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.release.xcconfig"; sourceTree = "<group>"; };
 		E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,11 +182,12 @@
 		784DBAD521723B7900EA568C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				78904DEF217201F9002523F5 /* SodaClient.swift */,
 				784DBAD621723BB100EA568C /* Report.swift */,
 				784DBAD821723BBA00EA568C /* User.swift */,
 				785FCE8B2172BC210033C119 /* SafeSpot.swift */,
 				785FCE8D2172BC2E0033C119 /* PoliceStation.swift */,
+				785FCE942172F7990033C119 /* CrimeReport.swift */,
+				785FCE96217303AA0033C119 /* CrimeReportAPIManager.swift */,
 			);
 			name = Models;
 			path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models;
@@ -516,7 +519,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78904DF0217201F9002523F5 /* SodaClient.swift in Sources */,
 				78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */,
 				0713189C2171F641007CD387 /* MenuViewController.swift in Sources */,
 				784DBAD921723BBA00EA568C /* User.swift in Sources */,
@@ -524,9 +526,11 @@
 				784DBAD721723BB100EA568C /* Report.swift in Sources */,
 				071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */,
 				785FCE8E2172BC2E0033C119 /* PoliceStation.swift in Sources */,
+				785FCE952172F7990033C119 /* CrimeReport.swift in Sources */,
 				071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */,
 				785FCE8C2172BC210033C119 /* SafeSpot.swift in Sources */,
 				0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */,
+				785FCE97217303AA0033C119 /* CrimeReportAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

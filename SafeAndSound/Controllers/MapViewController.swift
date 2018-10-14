@@ -15,12 +15,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var lattitude : CLLocationDegrees = 0
     var longitude : CLLocationDegrees = 0
     var currentLocation : CLLocation!
+    var crimeReports : [CrimeReport] = [] {
+        didSet {
+            displayCrimeReports()
+        }
+    }
     
     
     @IBOutlet fileprivate weak var mapView   : GMSMapView!
     @IBOutlet weak var reportContainerView   : UIView!
     @IBOutlet weak var reportImageView: UIImageView!
     @IBOutlet weak var recentReportsContainerView: UIView!
+    
+    
     
     
     fileprivate func setupViews() {
@@ -35,24 +42,46 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         recentReportsContainerView.setProperties(bgColor: .white, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: 2, borderColor: nil, borderWidth: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchCriminalLocations()
+        
         setupViews()
-        getLocation()
-        let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 10)
+        lattitude = 37.785834
+        longitude = -122.406417
+        let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 2)
         mapView.camera = camera
         
-        showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER", emergencySnippet: "21 hours left")
+        showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER")
         drawCircle(lat: lattitude ,long: longitude, opacity: 0.15, radius: 1000)
         
         let newPosition = CLLocationCoordinate2D(latitude: lattitude - 0.05, longitude: longitude - 0.05 )
-        showEmergencyMarker(position: newPosition, emergencyTitle: "SD HACKS 2018", emergencySnippet: "123456789")
+        showEmergencyMarker(position: newPosition, emergencyTitle: "SD HACKS 2018")
         
         drawCircle(lat: newPosition.latitude, long: newPosition.longitude, opacity: 0.15, radius: 1000)
-        mapView.settings.myLocationButton = true
+       
+
     }
     
+    func fetchCriminalLocations(){
+        CrimeReportAPIManager().currentCriminalLocations { (crimeReports : [CrimeReport]?, error : Error?) in
+            if let crimeReports = crimeReports{
+                self.crimeReports = crimeReports
+            }
+        }
+    }
+   
+    
+    func displayCrimeReports(){
+        
+        for event in crimeReports{
+            let long : CLLocationDegrees = event.latitude - 0.001
+            let lat : CLLocationDegrees = event.longitude
+            let pos = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            showEmergencyMarker(position: pos, emergencyTitle: event.type)
+        }
+    }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         let scale = newWidth / image.size.width
@@ -67,12 +96,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func showEmergencyMarker(position: CLLocationCoordinate2D, emergencyTitle: String, emergencySnippet: String){
+    func showEmergencyMarker(position: CLLocationCoordinate2D, emergencyTitle: String){
         let marker      = GMSMarker()
-        let newPosition = CLLocationCoordinate2D(latitude: position.latitude - 0.001, longitude: position.longitude )
-        marker.position = newPosition
+//        print(position)
+        marker.position = position
         marker.title    = emergencyTitle
-        marker.snippet  = emergencySnippet
         let image       = UIImage(named: "AlertPin-10")
         marker.icon     = resizeImage(image: image!, newWidth: 40)
         marker.map      = mapView
