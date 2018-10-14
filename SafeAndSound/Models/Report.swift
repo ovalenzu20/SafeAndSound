@@ -64,4 +64,13 @@ class EmergencyReport : Report{
         self.nearbyPoliceStation = nearbyPoliceStation
         super.init(date: date)
     }
+    
+    func alertOtherUsers(withinRadius radius : Int){
+        
+    }
+    
+    func gatherNearbyUsers(withinRadius radius : Int){
+        
+    }
+        
 }

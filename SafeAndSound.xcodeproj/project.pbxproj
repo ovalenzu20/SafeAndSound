@@ -92,6 +92,7 @@
 		784DBADA2172437E00EA568C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		785FCE8B2172BC210033C119 /* SafeSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSpot.swift; sourceTree = "<group>"; };
 		785FCE8D2172BC2E0033C119 /* PoliceStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceStation.swift; sourceTree = "<group>"; };
+		785FCE932172C9990033C119 /* SafeAndSound.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeAndSound.entitlements; sourceTree = "<group>"; };
 		78904DAD2171E7D3002523F5 /* SafeAndSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAndSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78904DB02171E7D3002523F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78904DB52171E7D3002523F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +215,7 @@
 		78904DAF2171E7D3002523F5 /* SafeAndSound */ = {
 			isa = PBXGroup;
 			children = (
+				785FCE932172C9990033C119 /* SafeAndSound.entitlements */,
 				78904DB42171E7D3002523F5 /* Main.storyboard */,
 				78904DB92171E7D3002523F5 /* LaunchScreen.storyboard */,
 				78904DBC2171E7D3002523F5 /* Info.plist */,
@@ -343,6 +345,11 @@
 				TargetAttributes = {
 					78904DAC2171E7D3002523F5 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					78904DBE2171E7D3002523F5 = {
 						CreatedOnToolsVersion = 10.0;
@@ -698,14 +705,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VH56T7SNL;
+				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
 				INFOPLIST_FILE = "SafeAndSound WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OmarValenzuela.SDHACKS2018.SafeAndSound.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp.SafeAndSoundWatchKitExtension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -721,14 +728,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VH56T7SNL;
+				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
 				INFOPLIST_FILE = "SafeAndSound WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OmarValenzuela.SDHACKS2018.SafeAndSound.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp.SafeAndSoundWatchKitExtension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -745,10 +752,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VH56T7SNL;
+				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
 				IBSC_MODULE = SafeAndSound_WatchKit_Extension;
 				INFOPLIST_FILE = "SafeAndSound WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.OmarValenzuela.SDHACKS2018.SafeAndSound.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -765,10 +772,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VH56T7SNL;
+				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
 				IBSC_MODULE = SafeAndSound_WatchKit_Extension;
 				INFOPLIST_FILE = "SafeAndSound WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.OmarValenzuela.SDHACKS2018.SafeAndSound.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -783,14 +790,15 @@
 			baseConfigurationReference = 11445F5B0BC45BB9C5DF9537 /* Pods-SafeAndSound.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SafeAndSound/SafeAndSound.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VH56T7SNL;
+				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
 				INFOPLIST_FILE = SafeAndSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OmarValenzuela.SDHACKS2018.SafeAndSound;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -802,14 +810,15 @@
 			baseConfigurationReference = DE6899C6CCAC64F5F22CAC63 /* Pods-SafeAndSound.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SafeAndSound/SafeAndSound.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VH56T7SNL;
+				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
 				INFOPLIST_FILE = SafeAndSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OmarValenzuela.SDHACKS2018.SafeAndSound;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

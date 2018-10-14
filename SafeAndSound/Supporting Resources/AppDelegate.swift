@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import GoogleMaps
 import GooglePlaces
+import UserNotifications
+
 
 
 @UIApplicationMain
@@ -22,6 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyAf4F47Jl2mGoLmmFHXxvQTDRmAaDm42UM")
         GMSPlacesClient.provideAPIKey("AIzaSyAf4F47Jl2mGoLmmFHXxvQTDRmAaDm42UM")
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Notifications permission granted.")
+            }
+            else {
+                print("Notifications permission denied because: \(error?.localizedDescription).")
+            }
+        }
+        
         return true
     }
 
