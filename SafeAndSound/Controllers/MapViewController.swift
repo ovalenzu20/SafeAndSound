@@ -161,18 +161,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         setupViews()
 //        lattitude = 37.785834
 //        longitude = -122.406417
-        let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 20)
+        let camera = GMSCameraPosition.camera(withLatitude: 34.052235, longitude: -118.243683, zoom: 5)
         mapView.camera = camera
         
-        showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER")
-        drawCircle(lat: lattitude ,long: longitude, opacity: 0.15, radius: 1000)
+//        showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER")
+//        drawCircle(lat: lattitude ,long: longitude, opacity: 0.15, radius: 1000)
         
-        let newPosition = CLLocationCoordinate2D(latitude: lattitude - 0.05, longitude: longitude - 0.05 )
-        showEmergencyMarker(position: newPosition, emergencyTitle: "SD HACKS 2018")
+//        let newPosition = CLLocationCoordinate2D(latitude: lattitude - 0.05, longitude: longitude - 0.05 )
+//        showEmergencyMarker(position: newPosition, emergencyTitle: "SD HACKS 2018")
         
-        drawCircle(lat: newPosition.latitude, long: newPosition.longitude, opacity: 0.15, radius: 1000)
+//        drawCircle(lat: newPosition.latitude, long: newPosition.longitude, opacity: 0.15, radius: 1000)
        
 
+        mapView.isMyLocationEnabled = true
     }
     
     func fetchCriminalLocations(){

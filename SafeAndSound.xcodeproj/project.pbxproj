@@ -203,7 +203,7 @@
 				785FCE96217303AA0033C119 /* CrimeReportAPIManager.swift */,
 			);
 			name = Models;
-			path = /Developer/SafeAndSound/SafeAndSound/Models;
+			path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models;
 			sourceTree = "<absolute>";
 		};
 		78904DA42171E7D3002523F5 = {
