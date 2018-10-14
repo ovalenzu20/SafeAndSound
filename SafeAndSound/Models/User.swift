@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class User{
+    var firstName : String
+    var lastName : String
+    var email : String
+    
+    init(first: String, last: String, email: String) {
+        self.firstName = first
+        self.lastName = last
+        self.email = email
+    }
+    
+    
+}

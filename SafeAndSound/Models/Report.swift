@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreLocation
+import GoogleMaps
 
 class Report {
     private var date   : Date
@@ -15,7 +17,6 @@ class Report {
     private var day    : Int
     private var hour   : Int
     private var minute : Int
-    
     
     init(date: Date) {
         let userCalendar = Calendar.current
@@ -36,5 +37,31 @@ class Report {
         self.day = dateTimeComponents.day!
         self.hour = dateTimeComponents.hour!
         self.minute = dateTimeComponents.minute!
+    }
+}
+
+class CautiousReport : Report{
+    var typeOfActivity : String
+    var location : CLLocation
+    var additionalInfo : String
+    
+    init(date: Date, typeOfActivity: String, location: CLLocation, additionalInfo: String) {
+        self.typeOfActivity = typeOfActivity
+        self.location = location
+        self.additionalInfo = additionalInfo
+        super.init(date: date)
+    }
+}
+
+class EmergencyReport : Report{
+    var nearbyUsers : [User]
+    var nearbySafeSpots : [SafeSpot]
+    var nearbyPoliceStation : [PoliceStation]
+    
+    init(date: Date, nearbyUsers : [User], nearbySafeSpots : [SafeSpot], nearbyPoliceStation : [PoliceStation]){
+        self.nearbyUsers = nearbyUsers
+        self.nearbySafeSpots = nearbySafeSpots
+        self.nearbyPoliceStation = nearbyPoliceStation
+        super.init(date: date)
     }
 }

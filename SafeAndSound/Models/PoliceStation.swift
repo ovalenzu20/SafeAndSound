@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import GoogleMaps
+
+class PoliceStation{
+    var name : String
+    var location : CLLocation
+    
+    init(name : String, location : CLLocation) {
+        self.name = name
+        self.location = location
+    }
+}
