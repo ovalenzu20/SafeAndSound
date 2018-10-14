@@ -11,10 +11,12 @@ import GoogleMaps
 
 class PoliceStation{
     var name : String
-    var location : CLLocation
+    var lat : CLLocationDegrees
+    var long : CLLocationDegrees
     
-    init(name : String, location : CLLocation) {
+    init(lat : CLLocationDegrees, long: CLLocationDegrees, name : String) {
+        self.lat = lat
+        self.long = long
         self.name = name
-        self.location = location
     }
 }

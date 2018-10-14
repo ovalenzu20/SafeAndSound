@@ -10,11 +10,13 @@ import Foundation
 import GoogleMaps
 
 class SafeSpot{
-    var location : CLLocation
+    var lat : CLLocationDegrees
+    var long : CLLocationDegrees
     var name : String
     
-    init(location : CLLocation,  name : String) {
-        self.location = location
+    init(lat : CLLocationDegrees, long : CLLocationDegrees,  name : String) {
+        self.lat = lat
+        self.long = long
         self.name = name
     }
 }

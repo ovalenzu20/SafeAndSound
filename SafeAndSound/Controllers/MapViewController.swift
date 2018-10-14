@@ -103,6 +103,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var crimeReports : [CrimeReport] = [] {
         didSet {
             displayCrimeReports()
+            displaySafeSpots()
+            displayPoliceStations()
         }
     }
     
@@ -145,8 +147,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCriminalLocations()
         
+        fetchCriminalLocations()
         viewDownOffset = 500
         viewUp = reportContainerView.center
         viewDown = CGPoint(x: reportContainerView.center.x, y: reportContainerView.center.y + viewDownOffset)
@@ -182,6 +184,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
    
+    func displaySafeSpots(){
+        let safeSpots : [SafeSpot] = [SafeSpot(lat: 34.048010, long: -118.239070, name: "Starbucks"),
+        SafeSpot(lat: 34.087990, long: -118.345140, name: "Sprouts"),
+        SafeSpot(lat: 34.049240, long: -118.260887, name: "Target"),
+        SafeSpot(lat: 34.039150, long: -118.239630, name: "Bank of America"),
+        SafeSpot(lat: 33.952530, long: -118.187980, name: "Walmart")]
+        
+        for spot in safeSpots{
+            showSafeSpotMarker(position: CLLocationCoordinate2D(latitude: spot.lat, longitude: spot.long), safeSpot: spot.name)
+        }
+        
+    }
+    
+    func displayPoliceStations(){
+        let policeStations : [PoliceStation] = [PoliceStation(lat: 34.010250, long: -118.305170, name: "Southwest Community PD"),
+                                      PoliceStation(lat: 34.101040, long: -118.331040, name: "Hollywood PD"),
+                                      PoliceStation(lat: 33.970580, long: -118.277970, name: "77th Street Community PD"),
+                                      PoliceStation(lat: 33.991250, long: -118.419700, name: "LAPD Pacific Division"),
+                                      PoliceStation(lat: 34.047470, long: -118.224680, name: "Hollenback Community PD")]
+        
+        for spot in policeStations{
+            showPoliceMarker(position: CLLocationCoordinate2D(latitude: spot.lat, longitude: spot.long), policeDepartment: spot.name)
+        }
+        
+    }
     
     func displayCrimeReports(){
         
@@ -228,23 +255,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         marker.map      = mapView
     }
     
-    func showPoliceMarker(position: CLLocationCoordinate2D, policeDepartment: String, hoursOfOperation: String){
+    func showPoliceMarker(position: CLLocationCoordinate2D, policeDepartment: String){
         let marker = GMSMarker()
         let newPosition = CLLocationCoordinate2D(latitude: position.latitude - 0.001, longitude: position.longitude )
         marker.position = newPosition
         marker.title = policeDepartment
-        marker.snippet = hoursOfOperation
         let image = UIImage(named: "PolicePin-11")
         marker.icon = resizeImage(image: image!, newWidth: 25)
         marker.map = mapView
     }
     
-    func showSafeSpotMarker(position: CLLocationCoordinate2D, safeSpot: String, description: String){
+    func showSafeSpotMarker(position: CLLocationCoordinate2D, safeSpot: String){
         let marker = GMSMarker()
         let newPosition = CLLocationCoordinate2D(latitude: position.latitude - 0.001, longitude: position.longitude )
         marker.position = newPosition
         marker.title = safeSpot
-        marker.snippet = description
         let image = UIImage(named: "SafePin-12")
         marker.icon = resizeImage(image: image!, newWidth: 25)
         marker.map = mapView
