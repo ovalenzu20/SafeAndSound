@@ -19,15 +19,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let button = UIButton()
         return button
     }()
-    var profileButton : UIButton = {
+    
+    @IBOutlet weak var profileButton : UIButton!
+    
+    @IBOutlet weak var createReportButton : UIButton!
+    
+    var helpButton: UIButton = {
         let button = UIButton()
-        button.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: .white, borderWidth: 4.0)
-        return button
-    }()
-    var createReportButton : UIButton = {
-        let button = UIButton()
-        button.setBackgroundImage(#imageLiteral(resourceName: "create_report"), for: .normal)
-        button.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: nil, borderWidth: nil)
+        button.setBackgroundImage(#imageLiteral(resourceName: "help"), for: .normal)
         return button
     }()
     
@@ -94,7 +93,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @objc private func createReport() {
-        
+        self.performSegue(withIdentifier: "createReportSegue", sender: self)
+    }
+    
+    
+    @objc private func viewProfile() {
+        self.performSegue(withIdentifier: "viewProfileSegue", sender: self)
     }
     
     
@@ -114,12 +118,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         notSafeButton.imageView?.contentMode = .scaleAspectFill
         
         profileButton.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 32, left: 22), width: 100, height: 100)
+        profileButton.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: .white, borderWidth: 4.0)
         profileButton.layer.cornerRadius = 50
         profileButton.setBackgroundImage(#imageLiteral(resourceName: "d_user"), for: .normal)
         profileButton.imageView?.contentMode = .scaleAspectFill
         profileButton.clipsToBounds = true
         
         createReportButton.anchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: Padding(top: 32, right: 22), width: 50, height: 50)
+        createReportButton.setBackgroundImage(#imageLiteral(resourceName: "create_report"), for: .normal)
+        createReportButton.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: nil, borderWidth: nil)
         createReportButton.layer.cornerRadius = 25
         
         recentReportsContainerView.anchor(top: reportImageView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: notSafeButton.leadingAnchor, padding: Padding(top: 16, left: 16, right: 16), height: 30)
