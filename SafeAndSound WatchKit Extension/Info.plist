@@ -25,7 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp</string>
+			<string>com.SDHACKS2018.SafeAndSound.3.SafeAndSoundWatchKitApp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
