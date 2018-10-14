@@ -455,7 +455,7 @@
                                 <rect key="frame" x="192" y="353" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="rfB-bF-xOu" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="Ura-em-VYm"/>
+                                    <segue destination="rfB-bF-xOu" kind="presentation" identifier="submitReport" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="Ura-em-VYm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-Li-iNh">

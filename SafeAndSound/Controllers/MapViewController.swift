@@ -31,7 +31,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var viewDown: CGPoint!
     
     
-    @IBOutlet fileprivate weak var mapView        : GMSMapView!
+    @IBOutlet weak var mapView        : GMSMapView!
     @IBOutlet weak var reportContainerView        : UIView!
     @IBOutlet weak var reportImageView            : UIImageView!
     @IBOutlet weak var recentReportsContainerView : UIView!
@@ -101,7 +101,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
     fileprivate func setupViews() {
         reportContainerView.anchor(top: view.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, height: (view.frame.height / 4) * 3)
         
@@ -161,7 +160,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         setupViews()
 //        lattitude = 37.785834
 //        longitude = -122.406417
-        let camera = GMSCameraPosition.camera(withLatitude: 34.052235, longitude: -118.243683, zoom: 5)
+        let camera = GMSCameraPosition.camera(withLatitude: 34.052235, longitude: -118.243683, zoom: 10)
         mapView.camera = camera
         
 //        showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER")

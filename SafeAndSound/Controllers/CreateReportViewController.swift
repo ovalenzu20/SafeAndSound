@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class CreateReportViewController: UIViewController {
     @IBOutlet weak var cancelButton  : UIButton!
     @IBOutlet weak var submitButton  : UIButton!
     @IBOutlet weak var containerView : UIView!
     
+    weak var mapView : GMSMapView?
+
     
     @IBAction func cancelSubmission(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
