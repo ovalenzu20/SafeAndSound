@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let userDefaults = UserDefaults.standard
         if userDefaults.bool(forKey: "onboardingComplete"){
-            initialVC = sb.instantiateViewController(withIdentifier: "tabBarController")
+            initialVC = sb.instantiateViewController(withIdentifier: "loginViewController")
         }
         
         
