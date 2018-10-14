@@ -117,7 +117,7 @@
 		78904DDB2171E7D4002523F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78904DDC2171E7D4002523F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		78904DEA2171F3FD002523F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		78904DEF217201F9002523F5 /* SodaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SodaClient.swift; path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models/SodaClient.swift; sourceTree = "<absolute>"; };
+		78904DEF217201F9002523F5 /* SodaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SodaClient.swift; path = /Developer/SafeAndSound/SafeAndSound/Models/SodaClient.swift; sourceTree = "<absolute>"; };
 		BFD778D64671AE867258D19E /* Pods-SafeAndSound WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6899C6CCAC64F5F22CAC63 /* Pods-SafeAndSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.release.xcconfig"; sourceTree = "<group>"; };
 		E25532D8E5FAD63C4E898181 /* Pods_SafeAndSound_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAndSound_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +194,7 @@
 				785FCE8D2172BC2E0033C119 /* PoliceStation.swift */,
 			);
 			name = Models;
-			path = /Users/omarvalenzuela/Developer/SafeAndSound/SafeAndSound/Models;
+			path = /Developer/SafeAndSound/SafeAndSound/Models;
 			sourceTree = "<absolute>";
 		};
 		78904DA42171E7D3002523F5 = {
@@ -717,7 +717,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
+				DEVELOPMENT_TEAM = 5VH56T7SNL;
 				INFOPLIST_FILE = "SafeAndSound WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,7 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
+				DEVELOPMENT_TEAM = 5VH56T7SNL;
 				INFOPLIST_FILE = "SafeAndSound WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -764,7 +764,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
+				DEVELOPMENT_TEAM = 5VH56T7SNL;
 				IBSC_MODULE = SafeAndSound_WatchKit_Extension;
 				INFOPLIST_FILE = "SafeAndSound WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp;
@@ -784,7 +784,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
+				DEVELOPMENT_TEAM = 5VH56T7SNL;
 				IBSC_MODULE = SafeAndSound_WatchKit_Extension;
 				INFOPLIST_FILE = "SafeAndSound WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SDHACKS2018.SafeAndSound.1.SafeAndSoundWatchKitApp;
@@ -804,7 +804,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SafeAndSound/SafeAndSound.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
+				DEVELOPMENT_TEAM = 5VH56T7SNL;
 				INFOPLIST_FILE = SafeAndSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,7 +824,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SafeAndSound/SafeAndSound.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HNMLLV9NJ;
+				DEVELOPMENT_TEAM = 5VH56T7SNL;
 				INFOPLIST_FILE = SafeAndSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
