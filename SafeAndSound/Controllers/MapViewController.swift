@@ -42,6 +42,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var originalReportContainerViewCenter: CGPoint!
     
     
+    
+    
+    
     @IBAction func didPanReportContainerView(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         
@@ -88,7 +91,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @objc private func createReport() {
-        self.performSegue(withIdentifier: "createReportSegue", sender: self)
+        showCautiousMarker(position: CLLocationCoordinate2D(latitude: lattitude, longitude: longitude), cautiousTitle: "CAUTION", cautiousSnippet: "A user recommends to be cautious around here ")
+        
     }
     
     
@@ -103,7 +107,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     fileprivate func setupViews() {
-        reportContainerView.anchor(top: view.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, height: (view.frame.height / 4) * 3)
+        reportContainerView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, height: view.frame.height / 2)
         
         reportImageView.anchor(top: reportContainerView.topAnchor, leading: reportContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 22, left: 16), width: (reportContainerView.frame.width / 2) - 16, height: (reportContainerView.frame.width / 2) - 16)
         
@@ -161,7 +165,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         setupViews()
 //        lattitude = 37.785834
 //        longitude = -122.406417
-        let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 20)
+        let camera = GMSCameraPosition.camera(withLatitude: 34.052235, longitude: -118.243683, zoom: 20)
         mapView.camera = camera
         
         showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER")
@@ -292,8 +296,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 //            longitude = currentLocation.coordinate.longitude
 //            //locationManager.startUpdatingHeading()
 //        }
-        lattitude = 32.707868399999995
-        longitude = 117.161082
+        lattitude = 34.052235
+        longitude = -118.243683
     }
     
     
