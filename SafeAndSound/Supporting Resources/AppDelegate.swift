@@ -21,6 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var initialVC = sb.instantiateViewController(withIdentifier: "IntroPageViewController")
+        
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: "onboardingComplete"){
+            initialVC = sb.instantiateViewController(withIdentifier: "tabBarController")
+        }
+        
+        
+        window?.rootViewController = initialVC
+        window?.makeKeyAndVisible()
+        
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyAf4F47Jl2mGoLmmFHXxvQTDRmAaDm42UM")
         GMSPlacesClient.provideAPIKey("AIzaSyAf4F47Jl2mGoLmmFHXxvQTDRmAaDm42UM")
