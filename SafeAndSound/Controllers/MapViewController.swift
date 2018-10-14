@@ -20,15 +20,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         return button
     }()
     
-    @IBOutlet weak var profileButton : UIButton!
     
+    @IBOutlet weak var profileButton      : UIButton!
     @IBOutlet weak var createReportButton : UIButton!
-    
-    var helpButton: UIButton = {
-        let button = UIButton()
-        button.setBackgroundImage(#imageLiteral(resourceName: "help"), for: .normal)
-        return button
-    }()
+    @IBOutlet weak var helpButton         : UIButton!
     
     
     var viewDownOffset: CGFloat!
@@ -117,6 +112,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         view.addSubview(notSafeButton)
         view.addSubview(profileButton)
         view.addSubview(createReportButton)
+        view.addSubview(helpButton)
         
         notSafeButton.anchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: Padding(right: 22, bottom: 22), width: view.frame.width / 5, height: ((view.frame.width / 5) * 1650) / 992)
         notSafeButton.setBackgroundImage(#imageLiteral(resourceName: "HelpButton-18"), for: .normal)
@@ -133,6 +129,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         createReportButton.setBackgroundImage(#imageLiteral(resourceName: "create_report"), for: .normal)
         createReportButton.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: nil, borderWidth: nil)
         createReportButton.layer.cornerRadius = 25
+        
+        helpButton.anchor(top: createReportButton.bottomAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: Padding(top: 22, right: 22), width: 50, height: 50)
+        helpButton.setBackgroundImage(#imageLiteral(resourceName: "help"), for: .normal)
+        helpButton.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: nil, borderWidth: nil)
+        helpButton.layer.cornerRadius = 25
         
         recentReportsContainerView.anchor(top: reportImageView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: notSafeButton.leadingAnchor, padding: Padding(top: 16, left: 16, right: 16), height: 30)
         
@@ -158,9 +159,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         fetchCriminalLocations()
         
         setupViews()
-        lattitude = 37.785834
-        longitude = -122.406417
-        let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 2)
+//        lattitude = 37.785834
+//        longitude = -122.406417
+        let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 20)
         mapView.camera = camera
         
         showEmergencyMarker(position: camera.target, emergencyTitle: "SD HACKS ALMOST OVER")
@@ -258,6 +259,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         circ.strokeColor = .clear
         circ.map = mapView
     }
+    
     
     func getLocation(){
 //        let status  = CLLocationManager.authorizationStatus()
