@@ -216,7 +216,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="560"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="YbG-8H-CJC">
+                                    <imageView userInteractionEnabled="NO" alpha="0.93000000000000005" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="YbG-8H-CJC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -313,22 +313,47 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Riv-GK-vR1">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Riv-GK-vR1">
                                         <rect key="frame" x="17" y="276" width="278" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportCell" rowHeight="70" id="7eC-67-T6S">
-                                                <rect key="frame" x="0.0" y="28" width="278" height="70"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportCell" rowHeight="72" id="7eC-67-T6S" customClass="ReportCell" customModule="SafeAndSound" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="278" height="72"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7eC-67-T6S" id="Abt-nS-Hn6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="69.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="72"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10/13/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-aY-4Q6">
+                                                            <rect key="frame" x="16" y="11" width="43" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:47pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajD-82-XaD">
+                                                            <rect key="frame" x="16" y="40" width="36" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="reportDateLabel" destination="Uhz-aY-4Q6" id="KT9-dz-3zS"/>
+                                                    <outlet property="reportTimeLabel" destination="ajD-82-XaD" id="zRq-5H-cRV"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6Zg-B4-vus" appends="YES" id="i3U-Ic-tta"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -343,13 +368,50 @@
                     <connections>
                         <outlet property="mapView" destination="Ffz-q6-jxb" id="T0g-lk-NpL"/>
                         <outlet property="recentReportsContainerView" destination="dEq-1m-Gwh" id="VEk-JR-qZ4"/>
+                        <outlet property="recentReportsLabel" destination="VB6-p9-SpC" id="Twg-3W-glU"/>
                         <outlet property="reportContainerView" destination="A9h-Ww-5eh" id="3Vx-v1-nRx"/>
                         <outlet property="reportImageView" destination="ZpA-YC-BIa" id="N6T-I8-M6E"/>
+                        <outlet property="reportsTableView" destination="Riv-GK-vR1" id="ZLI-qk-WwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIy-nZ-Mgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6Zg-B4-vus">
+                    <connections>
+                        <action selector="didPanReportContainerView:" destination="7b8-jT-fcX" id="IXt-a8-EQr"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1808.6956521739132" y="134.5108695652174"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lDo-Uk-FUH">
+            <objects>
+                <viewController id="rfB-bF-xOu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="how-nB-Fzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nhI-bt-8ao"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaM-Dm-Lnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2762" y="135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="l1a-0U-pK2">
+            <objects>
+                <viewController id="V85-aD-V3U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6PI-lt-dsO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="I2D-5c-Yil"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZ8-bf-XY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="-682"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="I8G-cf-mO5">
@@ -474,6 +536,116 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQr-id-dRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="536.41304347826087"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="wto-AJ-hNC">
+            <objects>
+                <viewController id="ad8-NC-tPU" customClass="ProfileViewController" customModule="SafeAndSound" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H2u-az-PvV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="kMK-0J-EnQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8v-7H-tAq">
+                                <rect key="frame" x="157" y="636" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UZL-p0-EAm"/>
+                                    <constraint firstAttribute="width" constant="100" id="aDt-PC-Fby"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <state key="normal" title="SIGN OUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOut:" destination="ad8-NC-tPU" eventType="touchUpInside" id="khk-cG-IQr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tUP-5p-a0u">
+                                <rect key="frame" x="162" y="40" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Jva-2Z-48Y"/>
+                                    <constraint firstAttribute="width" constant="90" id="h9W-ie-u0h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pamella Anderson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMY-IO-ZhO">
+                                <rect key="frame" x="145.66666666666666" y="170" width="122.99999999999997" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="p.anderson@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9je-Sy-OoC">
+                                <rect key="frame" x="126" y="200" width="162" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend or Family I" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iam-71-MrP">
+                                <rect key="frame" x="146" y="342" width="122" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="858.623.5424" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-7i-sUY">
+                                <rect key="frame" x="157.66666666666666" y="372" width="98.999999999999972" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend or Family II" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qx-4V-C1B">
+                                <rect key="frame" x="144" y="413" width="126" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="283.321.0983" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DF7-o4-SaU">
+                                <rect key="frame" x="157.66666666666666" y="443" width="98.999999999999972" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERGENCY CONTACTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMH-r2-HCI">
+                                <rect key="frame" x="82" y="300" width="251.66666666666669" height="22"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9je-Sy-OoC" firstAttribute="top" secondItem="VMY-IO-ZhO" secondAttribute="bottom" constant="10" id="Bb7-pl-6aF"/>
+                            <constraint firstItem="FZY-7i-sUY" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="DaT-yS-kgb"/>
+                            <constraint firstItem="kMK-0J-EnQ" firstAttribute="trailing" secondItem="jEp-Bc-EUi" secondAttribute="trailing" id="Dat-72-LRD"/>
+                            <constraint firstItem="tUP-5p-a0u" firstAttribute="top" secondItem="jEp-Bc-EUi" secondAttribute="top" constant="20" id="LQs-jt-sf3"/>
+                            <constraint firstItem="JMH-r2-HCI" firstAttribute="top" secondItem="9je-Sy-OoC" secondAttribute="bottom" constant="80" id="LzB-uJ-ElA"/>
+                            <constraint firstItem="9Qx-4V-C1B" firstAttribute="top" secondItem="FZY-7i-sUY" secondAttribute="bottom" constant="20" id="SSQ-oK-XmD"/>
+                            <constraint firstItem="DF7-o4-SaU" firstAttribute="top" secondItem="9Qx-4V-C1B" secondAttribute="bottom" constant="10" id="Vnt-eZ-WOS"/>
+                            <constraint firstItem="VMY-IO-ZhO" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="cWm-Ub-I8E"/>
+                            <constraint firstItem="9Qx-4V-C1B" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="fcy-kA-Mii"/>
+                            <constraint firstItem="tUP-5p-a0u" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="gyX-mB-WqT"/>
+                            <constraint firstItem="DF7-o4-SaU" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="hwD-G6-LGp"/>
+                            <constraint firstItem="kMK-0J-EnQ" firstAttribute="top" secondItem="H2u-az-PvV" secondAttribute="top" id="kGx-dN-vjz"/>
+                            <constraint firstItem="9je-Sy-OoC" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="l6z-z4-qxw"/>
+                            <constraint firstItem="kMK-0J-EnQ" firstAttribute="leading" secondItem="jEp-Bc-EUi" secondAttribute="leading" id="moW-tS-fCP"/>
+                            <constraint firstItem="JMH-r2-HCI" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="tTZ-f6-EK8"/>
+                            <constraint firstItem="jEp-Bc-EUi" firstAttribute="bottom" secondItem="m8v-7H-tAq" secondAttribute="bottom" constant="60" id="taO-pw-mXK"/>
+                            <constraint firstItem="kMK-0J-EnQ" firstAttribute="bottom" secondItem="jEp-Bc-EUi" secondAttribute="bottom" id="v7W-lP-vwg"/>
+                            <constraint firstItem="FZY-7i-sUY" firstAttribute="top" secondItem="iam-71-MrP" secondAttribute="bottom" constant="10" id="vOB-hP-jMs"/>
+                            <constraint firstItem="m8v-7H-tAq" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="vs2-sN-b8n"/>
+                            <constraint firstItem="iam-71-MrP" firstAttribute="top" secondItem="JMH-r2-HCI" secondAttribute="bottom" constant="20" id="yue-6V-Uc7"/>
+                            <constraint firstItem="iam-71-MrP" firstAttribute="centerX" secondItem="H2u-az-PvV" secondAttribute="centerX" id="z66-tC-jS6"/>
+                            <constraint firstItem="VMY-IO-ZhO" firstAttribute="top" secondItem="tUP-5p-a0u" secondAttribute="bottom" constant="40" id="zQG-Ve-awH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jEp-Bc-EUi"/>
+                    </view>
+                    <connections>
+                        <outlet property="signOutButton" destination="m8v-7H-tAq" id="gx5-Aq-eBc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uc-lp-FUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.6956521739132" y="952.98913043478274"/>
         </scene>
     </scenes>
     <resources>
