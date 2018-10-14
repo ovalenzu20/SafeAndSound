@@ -12,6 +12,9 @@
 		0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189D2171FBDB007CD387 /* LogInViewController.swift */; };
 		071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713189F2171FBF1007CD387 /* SignUpViewController.swift */; };
 		071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071318A12171FF80007CD387 /* UIView+Extensions.swift */; };
+		071318AA2172BE6F007CD387 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071318A92172BE6F007CD387 /* ReportCell.swift */; };
+		071318AC2172EF01007CD387 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071318AB2172EF01007CD387 /* ProfileViewController.swift */; };
+		073F592321730D2000ECC897 /* CreateReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F592221730D2000ECC897 /* CreateReportViewController.swift */; };
 		784DBAD721723BB100EA568C /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBAD621723BB100EA568C /* Report.swift */; };
 		784DBAD921723BBA00EA568C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBAD821723BBA00EA568C /* User.swift */; };
 		784DBADB2172437E00EA568C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBADA2172437E00EA568C /* MapViewController.swift */; };
@@ -82,6 +85,9 @@
 		0713189D2171FBDB007CD387 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0713189F2171FBF1007CD387 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		071318A12171FF80007CD387 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		071318A92172BE6F007CD387 /* ReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		071318AB2172EF01007CD387 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		073F592221730D2000ECC897 /* CreateReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportViewController.swift; sourceTree = "<group>"; };
 		0A53EC8C3E2102AB9F281545 /* Pods-SafeAndSound WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit Extension/Pods-SafeAndSound WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		11445F5B0BC45BB9C5DF9537 /* Pods-SafeAndSound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound/Pods-SafeAndSound.debug.xcconfig"; sourceTree = "<group>"; };
 		1BA9A8AA4D4F787CC255B6B4 /* Pods-SafeAndSound WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAndSound WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAndSound WatchKit App/Pods-SafeAndSound WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				071318A12171FF80007CD387 /* UIView+Extensions.swift */,
+				071318A92172BE6F007CD387 /* ReportCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +265,8 @@
 				0713189D2171FBDB007CD387 /* LogInViewController.swift */,
 				0713189F2171FBF1007CD387 /* SignUpViewController.swift */,
 				0713189B2171F641007CD387 /* MenuViewController.swift */,
+				071318AB2172EF01007CD387 /* ProfileViewController.swift */,
+				073F592221730D2000ECC897 /* CreateReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -516,17 +525,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073F592321730D2000ECC897 /* CreateReportViewController.swift in Sources */,
 				78904DF0217201F9002523F5 /* SodaClient.swift in Sources */,
 				78904DB12171E7D3002523F5 /* AppDelegate.swift in Sources */,
 				0713189C2171F641007CD387 /* MenuViewController.swift in Sources */,
 				784DBAD921723BBA00EA568C /* User.swift in Sources */,
 				784DBADB2172437E00EA568C /* MapViewController.swift in Sources */,
 				784DBAD721723BB100EA568C /* Report.swift in Sources */,
+				071318AC2172EF01007CD387 /* ProfileViewController.swift in Sources */,
 				071318A22171FF80007CD387 /* UIView+Extensions.swift in Sources */,
 				785FCE8E2172BC2E0033C119 /* PoliceStation.swift in Sources */,
 				071318A02171FBF1007CD387 /* SignUpViewController.swift in Sources */,
 				785FCE8C2172BC210033C119 /* SafeSpot.swift in Sources */,
 				0713189E2171FBDB007CD387 /* LogInViewController.swift in Sources */,
+				071318AA2172BE6F007CD387 /* ReportCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

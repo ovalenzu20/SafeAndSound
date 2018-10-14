@@ -12,32 +12,145 @@ import GoogleMaps
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     let locationMgr = CLLocationManager()
-    var lattitude : CLLocationDegrees = 0
-    var longitude : CLLocationDegrees = 0
+    var lattitude       : CLLocationDegrees = 0
+    var longitude       : CLLocationDegrees = 0
     var currentLocation : CLLocation!
+    var notSafeButton   : UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    @IBOutlet weak var profileButton : UIButton!
+    
+    @IBOutlet weak var createReportButton : UIButton!
+    
+    var helpButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(#imageLiteral(resourceName: "help"), for: .normal)
+        return button
+    }()
     
     
-    @IBOutlet fileprivate weak var mapView   : GMSMapView!
-    @IBOutlet weak var reportContainerView   : UIView!
-    @IBOutlet weak var reportImageView: UIImageView!
-    @IBOutlet weak var recentReportsContainerView: UIView!
+    var viewDownOffset: CGFloat!
+    var viewUp: CGPoint!
+    var viewDown: CGPoint!
+    
+    
+    @IBOutlet fileprivate weak var mapView        : GMSMapView!
+    @IBOutlet weak var reportContainerView        : UIView!
+    @IBOutlet weak var reportImageView            : UIImageView!
+    @IBOutlet weak var recentReportsContainerView : UIView!
+    @IBOutlet weak var reportsTableView           : UITableView!
+    @IBOutlet weak var recentReportsLabel         : UILabel!
+    
+    
+    var originalReportContainerViewCenter: CGPoint!
+    
+    
+    @IBAction func didPanReportContainerView(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        
+        if sender.state == .began {
+            originalReportContainerViewCenter = reportContainerView.center
+        }
+        else if sender.state == .changed {
+            reportContainerView.center = CGPoint(x: originalReportContainerViewCenter.x, y: originalReportContainerViewCenter.y + translation.y)
+        }
+        else if sender.state == .ended {
+            let velocity = sender.velocity(in: view)
+            
+            if velocity.y > 0 {
+                UIView.animate(withDuration: 0.3) {
+                    self.reportContainerView.center = self.viewDown
+                }
+            }
+            else {
+                UIView.animate(withDuration: 0.3) {
+                    self.reportContainerView.center = self.viewUp
+                }
+            }
+        }
+    }
+    
+    
+    @objc private func alertSystem() {
+        let shouldAlertController = UIAlertController(title: "Are you ok?", message: "Would you like us to contact the authorities?", preferredStyle: .alert)
+        let alertedController = UIAlertController(title: "Authorities Have Been Alerted", message: "Please quickly proceed to the nearest Safe Spot", preferredStyle: .alert)
+        
+        let okAction1    = UIAlertAction(title: "I'm fine", style: .default, handler: nil)
+        let notOkAction = UIAlertAction(title: "No! Please help!", style: .default) { (action) in
+            self.present(alertedController, animated: true, completion: nil)
+        }
+        
+        let okAction2    = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        shouldAlertController.addAction(okAction1)
+        shouldAlertController.addAction(notOkAction)
+        alertedController.addAction(okAction2)
+        
+        self.present(shouldAlertController, animated: true, completion: nil)
+    }
+    
+    
+    @objc private func createReport() {
+        self.performSegue(withIdentifier: "createReportSegue", sender: self)
+    }
+    
+    
+    @objc private func viewProfile() {
+        self.performSegue(withIdentifier: "viewProfileSegue", sender: self)
+    }
     
     
     fileprivate func setupViews() {
-        reportContainerView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, height: (view.frame.height / 4) * 3)
+        reportContainerView.anchor(top: view.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, height: (view.frame.height / 4) * 3)
         
         reportImageView.anchor(top: reportContainerView.topAnchor, leading: reportContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 22, left: 16), width: (reportContainerView.frame.width / 2) - 16, height: (reportContainerView.frame.width / 2) - 16)
         
         reportImageView.setProperties(bgColor: nil, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: 2, borderColor: .white, borderWidth: 4)
-    
-        recentReportsContainerView.anchor(top: reportImageView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 16, left: 16), height: 30)
         
-        recentReportsContainerView.setProperties(bgColor: .white, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: 2, borderColor: nil, borderWidth: nil)
+        view.addSubview(notSafeButton)
+        view.addSubview(profileButton)
+        view.addSubview(createReportButton)
+        
+        notSafeButton.anchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: Padding(right: 22, bottom: 22), width: view.frame.width / 5, height: ((view.frame.width / 5) * 1650) / 992)
+        notSafeButton.setBackgroundImage(#imageLiteral(resourceName: "HelpButton-18"), for: .normal)
+        notSafeButton.imageView?.contentMode = .scaleAspectFill
+        
+        profileButton.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: Padding(top: 32, left: 22), width: 100, height: 100)
+        profileButton.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: .white, borderWidth: 4.0)
+        profileButton.layer.cornerRadius = 50
+        profileButton.setBackgroundImage(#imageLiteral(resourceName: "d_user"), for: .normal)
+        profileButton.imageView?.contentMode = .scaleAspectFill
+        profileButton.clipsToBounds = true
+        
+        createReportButton.anchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: Padding(top: 32, right: 22), width: 50, height: 50)
+        createReportButton.setBackgroundImage(#imageLiteral(resourceName: "create_report"), for: .normal)
+        createReportButton.setProperties(bgColor: nil, shadowColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), shadowRadius: 2.0, shadowOpacity: 0.7, shadowOffset: CGSize(width: 2.0, height: 2.0), cornerRadius: nil, borderColor: nil, borderWidth: nil)
+        createReportButton.layer.cornerRadius = 25
+        
+        recentReportsContainerView.anchor(top: reportImageView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: notSafeButton.leadingAnchor, padding: Padding(top: 16, left: 16, right: 16), height: 30)
+        
+        recentReportsContainerView.setProperties(bgColor: .white, shadowColor: nil, shadowRadius: nil, shadowOpacity: nil, shadowOffset: nil, cornerRadius: recentReportsContainerView.frame.height / 2, borderColor: nil, borderWidth: nil)
+        
+        reportsTableView.anchor(top: recentReportsContainerView.bottomAnchor, leading: reportContainerView.leadingAnchor, bottom: reportContainerView.bottomAnchor, trailing: notSafeButton.leadingAnchor, padding: Padding(top: 16, left: 16, right: 16, bottom: 16))
+        
+        recentReportsLabel.anchor(centerY: recentReportsContainerView.centerYAnchor, top: nil, leading: recentReportsContainerView.leadingAnchor,bottom: nil, trailing: nil, padding: Padding(left: 8))
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewDownOffset = 500
+        viewUp = reportContainerView.center
+        viewDown = CGPoint(x: reportContainerView.center.x, y: reportContainerView.center.y + viewDownOffset)
+        
+        notSafeButton.addTarget(self, action: #selector(alertSystem), for: .touchUpInside)
+        reportsTableView.delegate   = self
+        reportsTableView.dataSource = self
+        reportsTableView.rowHeight  = UITableView.automaticDimension
+        
         setupViews()
         getLocation()
         let camera = GMSCameraPosition.camera(withLatitude: 37.785834, longitude: -122.406417, zoom: 10)
@@ -122,36 +235,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getLocation(){
-        let status  = CLLocationManager.authorizationStatus()
-        
-        if status == .notDetermined {
-            locationMgr.requestAlwaysAuthorization()
-            locationMgr.requestWhenInUseAuthorization()
-            return
-        }
-        
-        if status == .denied || status == .restricted {
-            let alert = UIAlertController(title: "Location Services Disabled", message: "Please enable Location Services in Settings", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            
-            present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        locationMgr.delegate = self
-        locationMgr.desiredAccuracy = kCLLocationAccuracyBest
-        locationMgr.requestAlwaysAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            
-            locationMgr.startUpdatingLocation()
-            currentLocation = locationMgr.location
-            lattitude = currentLocation.coordinate.latitude
-            longitude = currentLocation.coordinate.longitude
-            //locationManager.startUpdatingHeading()
-        }
+//        let status  = CLLocationManager.authorizationStatus()
+//
+//        if status == .notDetermined {
+//            locationMgr.requestAlwaysAuthorization()
+//            locationMgr.requestWhenInUseAuthorization()
+//            return
+//        }
+//
+//        if status == .denied || status == .restricted {
+//            let alert = UIAlertController(title: "Location Services Disabled", message: "Please enable Location Services in Settings", preferredStyle: .alert)
+//
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alert.addAction(okAction)
+//
+//            present(alert, animated: true, completion: nil)
+//            return
+//        }
+//
+//        locationMgr.delegate = self
+//        locationMgr.desiredAccuracy = kCLLocationAccuracyBest
+//        locationMgr.requestAlwaysAuthorization()
+//
+//        if CLLocationManager.locationServicesEnabled() {
+//
+//            locationMgr.startUpdatingLocation()
+//            currentLocation = locationMgr.location
+//            lattitude = currentLocation.coordinate.latitude
+//            longitude = currentLocation.coordinate.longitude
+//            //locationManager.startUpdatingHeading()
+//        }
+        lattitude = 32.707868399999995
+        longitude = 117.161082
     }
     
     
@@ -202,13 +317,12 @@ extension MapViewController: GMSMapViewDelegate{
 
 extension MapViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath) as! ReportCell
+        cell.setupCell()
         return cell
     }
-    
-    
 }

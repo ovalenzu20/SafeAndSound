@@ -11,6 +11,7 @@ import Firebase
 
 
 class SignUpViewController: UIViewController {
+    @IBOutlet weak var fullnameTextField  : UITextField!
     @IBOutlet weak var emailTextField     : UITextField!
     @IBOutlet weak var passwordTextField  : UITextField!
     @IBOutlet weak var signUpButton       : UIButton!
@@ -22,6 +23,7 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func signUp(_ sender: UIButton) {
+        guard let fullname  = fullnameTextField.text  else { return }
         guard let email     = emailTextField.text     else { return }
         guard let password  = passwordTextField.text  else { return }
         
@@ -29,7 +31,15 @@ class SignUpViewController: UIViewController {
             if error == nil && user != nil {
                 // SUCCESSFUL LOGIN
                 print("User Created")
-                self.dismiss(animated: false, completion: nil)
+                
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = fullname
+                changeRequest?.commitChanges(completion: { (error) in
+                    if error == nil {
+                        print("User display name changed")
+                        self.dismiss(animated: false, completion: nil)
+                    }
+                })
             }
             else {
                 print("Error: \(error?.localizedDescription ?? "")")
